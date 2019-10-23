@@ -1,5 +1,6 @@
 package com.example.camaraapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -47,7 +48,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 } else {
                     drawerLayout.openDrawer(GravityCompat.START);
                     menu_visible = true;
+                    Log.d("MIAPP", "'" + String.valueOf(item.getItemId()) +"'");
+
+
                 }
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -59,9 +64,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String menu = item.getTitle().toString();
         int npi = item.getOrder();//obtengo el número del punto de interés
 
-        Log.d(getClass().getCanonicalName(), "Ha tocado la opción " + menu + " " +npi);
+        Log.d("MIAPP", "Ha tocado la opción " + menu + " " +npi);
         drawerLayout.closeDrawers();
         menu_visible = false;
+
+        if (npi == 1){
+            Intent intent = new Intent(this, TomarFotoDiscoActivity.class);
+            startActivity(intent);
+
+        }else if (npi == 2){
+            Intent intent = new Intent(this, TomarFotoRam.class);
+            startActivity(intent);
+        }else if (npi == 3){
+            Intent intent = new Intent(this, SeleccionaFotoActivity.class);
+            startActivity(intent);
+        }
+        //Intent intent = new Intent(this, TomarFotoRam.class);
+        //Intent intent = new Intent(this, SeleccionaFotoActivity.class);
+        //startActivity(intent);
 
         return false;
     }

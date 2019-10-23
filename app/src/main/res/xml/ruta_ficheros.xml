@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--contenido de ruta_ficheros.xml-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--Para decir que lo guardo en carpeta pública propia-->
+    <external-path name="mis_imagenes_publica" path="CFTIC" />
+</paths>
