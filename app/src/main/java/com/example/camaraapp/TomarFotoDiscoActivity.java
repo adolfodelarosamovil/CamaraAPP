@@ -34,6 +34,9 @@ public class TomarFotoDiscoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tomar_foto_disco);
 
         ActivityCompat.requestPermissions(this, PERMISOS, 100);
+
+        //Ocultar Action Bar
+        getActionBar().hide();
     }
 
     @Override
